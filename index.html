@@ -23,46 +23,34 @@
             
             <div class="row">
                 <div class=" text-center">
-                    <p class="text-warning fw-bold fs-1 ">Aakash Rawal</p>
+                    <p class="text-dark fw-bold fs-1 ">Aakash Rawal</p>
                 </div>
                 
                 <div class="col-0 col-xl-3"></div>
                 <div class="col-12 col-xl-6 d-flex justify-content-center">
                     <form class="a_bg  shadow-lg p-3 mb-5 bg-body rounded p-3">
-                        <p class="fw-light text-center bg-body fs-2">Simple
+                        <p class="fw-light  text-center text-white bg-dark rounded-2  bg-opacity-75 fs-2">Simple
                             Interest</p>
-
-
                         <label class="fw-bold">Capital</label>
                         <input type="number" class="form-control border border-2
-                            border-muted" id="cptl">
+                            border-muted" id="cptl" required>
 
                         <label class="fw-bold mt-2">Rate</label>
                         <input type="number" class="form-control border border-2
-                            border-muted" id="rt">
+                            border-muted" id="rt" required>
 
                         <label class="fw-bold mt-2">Time</label>
                         <input type="number" class="form-control border border-2
-                            border-muted" id="tm">
+                            border-muted" id="tm" required>
                         <div class="form-check mt-3">
                             <input type="checkbox" class="form-check-input
                                 border border-2 border-muted"
                                 id="myc" onclick="myFun();">
                             <label class="form-check-label" for="exampleCheck1" ">Check me out</label>
                         </div>
-                        <div class="row w-100" id="dmy" style="display:none">
-                            <div class="col-4">
-                                <label class="fw-bold mt-2">Day</label>
-                                <input type="text" class="form-control border border-2 border-muted" id="tm" name="date" id="date" placeholder="Day" required="required" minlength="1" maxlength="2" />  
-                            </div>
-                            <div class="col-4">
-                                <label class="fw-bold mt-2">Month</label>
-                                <input type="text" class="form-control border border-2 border-muted" name="month" id="month" placeholder="MM" required="required" minlength="1" maxlength="2"/>  
-                            </div>
-                            <div class="col-4">
-                                <label class="fw-bold mt-2">Year</label>
-                                <input type="text" class="form-control border border-2 border-muted" id="year" placeholder="YYYY" required="required" minlength="4" maxlength="4"  />  
-                            </div>
+                        <div class="" id="dmy" style="display:none">            
+                                <label class="fw-bold mt-2">Date</label>
+                                <input type="date" onload="getDate()" class="form-control border border-2 border-muted"  id="date" name="date" id="date" placeholder="date" required="required"/>                              
                         </div>
                         <button type="button" class="btn btn-light mt-3 shadow-sm rounded"value="submit"
                             onclick="return myFunction()" data-bs-toggle="modal"
@@ -84,7 +72,7 @@
                         </div>
                         <div class="modal-body">
                             <h5 id="res"></h5>
-                            <span class="badge bg-muted text-dark fs-5 border border-2" id="cwi"></span>
+                            <span class="badge bg-muted text-dark mt-2 fs-5 border border-2" id="cwi"></span>
                         </div>
                         <div class="modal-footer bg-success">
                             <button type="button" class="btn btn-success"
@@ -96,6 +84,9 @@
         </div>
    
        <script>
+        function getDate(){
+            
+        }
         function myFun() {
             // Get the checkbox
             var checkBox = document.getElementById("myc");
