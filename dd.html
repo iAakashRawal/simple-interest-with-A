@@ -15,12 +15,15 @@
         <style> 
         body {
             font-family: 'Montserrat';
+            background-image:url("img/Web-Banner-1-2.png") ;
+        }
+        .a_bg {
+          background-image: url("img/Web-Banner-2.png");  
         }
     </style>
     </head>
     <body>
         <div class="container">
-            
             <div class="row">
                 <div class=" text-center">
                     <p class="text-warning fw-bold fs-1 ">Aakash Rawal</p>
@@ -28,43 +31,29 @@
                 
                 <div class="col-0 col-xl-3"></div>
                 <div class="col-12 col-xl-6 d-flex justify-content-center">
-                    <form class="a_bg  shadow-lg p-3 mb-5 bg-body rounded p-3">
-                        <p class="fw-light text-center bg-body fs-2">Simple
+                    <form class="a_bg  border border-5 border-warning
+                        rounded p-3">
+                        <p class="fw-light text-center a_color fs-2">Simple
                             Interest</p>
-
-
                         <label class="fw-bold">Capital</label>
                         <input type="number" class="form-control border border-2
-                            border-muted" id="cptl">
+                            border-warning" id="cptl">
 
                         <label class="fw-bold mt-2">Rate</label>
                         <input type="number" class="form-control border border-2
-                            border-muted" id="rt">
+                            border-warning" id="rt">
 
                         <label class="fw-bold mt-2">Time</label>
                         <input type="number" class="form-control border border-2
-                            border-muted" id="tm">
+                            border-warning" id="tm">
                         <div class="form-check mt-3">
                             <input type="checkbox" class="form-check-input
-                                border border-2 border-muted"
-                                id="myc" onclick="myFun();">
-                            <label class="form-check-label" for="exampleCheck1" ">Check me out</label>
+                                border border-2 border-warning"
+                                id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
                         </div>
-                        <div class="row w-100" id="dmy" style="display:none">
-                            <div class="col-4">
-                                <label class="fw-bold mt-2">Day</label>
-                                <input type="text" class="form-control border border-2 border-muted" id="tm" name="date" id="date" placeholder="Day" required="required" minlength="1" maxlength="2" />  
-                            </div>
-                            <div class="col-4">
-                                <label class="fw-bold mt-2">Month</label>
-                                <input type="text" class="form-control border border-2 border-muted" name="month" id="month" placeholder="MM" required="required" minlength="1" maxlength="2"/>  
-                            </div>
-                            <div class="col-4">
-                                <label class="fw-bold mt-2">Year</label>
-                                <input type="text" class="form-control border border-2 border-muted" id="year" placeholder="YYYY" required="required" minlength="4" maxlength="4"  />  
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-light mt-3 shadow-sm rounded"value="submit"
+                        <button type="button" class="btn btn-light mt-3 border
+                            border-5 border-success"value="submit"
                             onclick="return myFunction()" data-bs-toggle="modal"
                             data-bs-target="#myModal">
                             Submit
@@ -83,8 +72,8 @@
                                 data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                            <h5 id="res"></h5>
-                            <span class="badge bg-muted text-dark fs-5 border border-2" id="cwi"></span>
+                            <h1 id="res"></h1>
+                            <span class="badge bg-warning text-dark" id="cwi"></span>
                         </div>
                         <div class="modal-footer bg-success">
                             <button type="button" class="btn btn-success"
@@ -96,19 +85,6 @@
         </div>
    
        <script>
-        function myFun() {
-            // Get the checkbox
-            var checkBox = document.getElementById("myc");
-            // Get the output text
-            var text = document.getElementById("dmy");
-
-            // If the checkbox is checked, display the output text
-            if (checkBox.checked == true){
-                text.style.display = "block";
-            } else {
-                text.style.display = "none";
-            }
-            }
         function myFunction(){
             //alert("ok");
              let c = document.getElementById('cptl').value;
@@ -119,8 +95,8 @@
              let result = parseInt(c) * parseInt(r) * parseInt(t) /100 *12 ;
              let cwi1 = result + parseInt(c) ;
              //alert(result);
-             fs = document.getElementById("res").innerHTML= "कुल ब्याज "+ result+rps;
-             fs = document.getElementById("cwi").innerHTML="पूंजी और ब्याज " + cwi1+rps;
+             fs = document.getElementById("res").innerHTML=result+rps;
+             fs = document.getElementById("cwi").innerHTML=cwi1+rps;
              
              return false;
         }
